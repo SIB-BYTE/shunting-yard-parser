@@ -85,10 +85,10 @@ pub fn evaluate(rpn_tokens: &Vec<Token>) -> f64 {
                 let second: f64 = eval_stack.pop().unwrap() as f64;
 
                 match op {
-                    '+' => eval_stack.push(first + second),
+                    '+' => eval_stack.push(second + first),
                     '-' => eval_stack.push(second - first),
-                    '*' => eval_stack.push(first * second),
-                    '/' => eval_stack.push(first / second),
+                    '*' => eval_stack.push(second * first),
+                    '/' => eval_stack.push(second / first),
                     '^' => eval_stack.push(second.powf(first)),
                     _ => panic!("Invalid binary operation!"),
                 };
