@@ -15,10 +15,6 @@ pub enum Token {
     Paren_pair(char),
 }
 
-/*
-
-*/
-
 pub fn tokenize(src: &str) -> Result<Vec<Token>, String> {
     let mut token_stream = vec![];
     let mut iterator = src.chars().peekable();
